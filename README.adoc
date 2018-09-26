@@ -1,0 +1,3 @@
+== NimGL Website
+
+At the moment it's just an index with a redirection to the github repo.
