@@ -1,5 +1,0 @@
-{
-  "execMap": { "adoc": "sh compile.sh" },
-  "watch": [ "." ],
-  "ext": "adoc"
-}
