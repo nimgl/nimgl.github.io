@@ -80,7 +80,7 @@ proc main() =
   if w == nil:
     quit(-1)
 
-  w.setKeyCallback(keyProc)
+  discard w.setKeyCallback(keyProc)
   w.makeContextCurrent()
 
   assert glInit()
