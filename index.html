@@ -28,7 +28,8 @@
 
   <!-- Meta Tags Generated via http://heymeta.com -->
 
-  <link rel="stylesheet" href="//unpkg.com/docsify-themeable/dist/css/theme-simple.css">
+  <!-- Theme: Simple -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   <style>
     :root {
       --base-font-size: 16px;
@@ -58,23 +59,40 @@
       name: '<img src=media/logo.png style="height:4em;">',
       repo: 'lmariscal/nimgl',
       auto2top: true,
+      coverpage: true,
+      onlyCover: true,
+      homepage: 'home.md',
       loadSidebar: true,
-      maxLevel: 4,
+      subMaxLevel: 2,
       search: {
         paths: 'auto',
         placeholder: 'Search',
         noData: 'No Results.'
       },
-      disqus: 'nimgl'
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            if (/githubusercontent\.com/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace('raw.githubusercontent.com', 'github.com')
+                .replace(/\/master/, '/blob/master')
+            } else {
+              url = 'https://github.com/lmariscal/nimgl_www/blob/master/' + vm.route.file
+            }
+            var editHtml = '\n[:memo: Edit on GitHub](' + url + ')\n';
+            return html + editHtml;
+          })
+        }
+      ]
     }
   </script>
-  <script src="//unpkg.com/docsify/lib/plugins/disqus.min.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-nim.min.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-cpp.min.js"></script>
+  <!-- <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script> -->
+  <!-- <script src="//unpkg.com/prismjs/components/prism-cpp.min.js"></script> -->
   <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
   <script src="//unpkg.com/docsify-copy-code"></script>
+
 </body>
 </html>

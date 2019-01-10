@@ -1,12 +1,3 @@
-* [Overview](/)
-* [GLFW](/glfw)
-* [OpenGL](/opengl)
-* [ImGUI](/imgui)
-* [STB](/stb)
-  * [Image](/stb#Image)
-* [Generators](/generators)
-* [Nim Docs](/docs/nimgl.html ':ignore')
-
-# Demos and Tutorials
-
-* []()
+* [Home](home.md)
+* [Quick Start](quickstart.md)
+* [Nim Docs](/docs/nimgl.html ':ignore :target=_blank')
