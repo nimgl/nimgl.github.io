@@ -10,7 +10,7 @@ We try to keep this bindings as similar to the originals but we do have some use
 
 ## How to Install?
 You will need to have [Nimble](https://github.com/nim-lang/nimble) installed and
-the [Nim](Nim) 0.18 or above.
+[Nim](https://nim-lang.org/) 0.19.2 or above.
 
 ```shell
 nimble install nimgl
