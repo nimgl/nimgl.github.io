@@ -1552,6 +1552,8 @@ function main() {
     title="windowShouldClose(window: GLFWWindow): bool"><wbr />window<wbr />Should<wbr />Close<span class="attachedType" style="visibility:hidden">GLFWWindow</span></a></li>
   <li><a class="reference" href="#swapBuffers%2CGLFWWindow"
     title="swapBuffers(window: GLFWWindow): void"><wbr />swap<wbr />Buffers<span class="attachedType" style="visibility:hidden">GLFWWindow</span></a></li>
+  <li><a class="reference" href="#glfwSwapInterval%2Cint32"
+    title="glfwSwapInterval(interval: int32): void"><wbr />glfw<wbr />Swap<wbr />Interval<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#glfwPollEvents%2C"
     title="glfwPollEvents(): void"><wbr />glfw<wbr />Poll<wbr />Events<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#glfwGetTime%2C"
@@ -2301,6 +2303,12 @@ Returns the value of the close flag of the specified window.
 Swaps the front and back buffers of the specified window when rendering with OpenGL or OpenGL ES.  If the swap interval is greater than zero, the GPU driver waits the specified number of screen updates before swapping the buffers.
 
 </dd>
+<a id="glfwSwapInterval,int32"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">glfwSwapInterval</span><span class="Other">(</span><span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwSwapInterval&quot;</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+Sets the number of v-blanks that must occur before the front and back buffers are swapped. If this is set greater than 0, the GPU will wait for specified number of screen updates before swapping the buffers.
+
+</dd>
 <a id="glfwPollEvents,"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">glfwPollEvents</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwPollEvents&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -2639,7 +2647,7 @@ returns The <tt class="docutils literal"><span class="pre">HWND</span></tt> of t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-01-17 21:47:54 UTC</small>
+        <small>Made with Nim. Generated: 2019-02-10 21:11:53 UTC</small>
       </div>
     </div>
   </div>
