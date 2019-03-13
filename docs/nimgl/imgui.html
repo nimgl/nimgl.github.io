@@ -1302,16 +1302,24 @@ function main() {
     title="ImGuiTreeNodeFlags = int32"><wbr />Im<wbr />Gui<wbr />Tree<wbr />Node<wbr />Flags<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiWindowFlags"
     title="ImGuiWindowFlags = int32"><wbr />Im<wbr />Gui<wbr />Window<wbr />Flags<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImS16"
+    title="ImS16 = int16"><wbr />Im<wbr />S16<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImS32"
-    title="ImS32 = uint32"><wbr />Im<wbr />S32<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImS32 = int32"><wbr />Im<wbr />S32<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImS64"
     title="ImS64 = int64"><wbr />Im<wbr />S64<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImS8"
+    title="ImS8 = char"><wbr />Im<wbr />S8<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImTextureID"
     title="ImTextureID = pointer"><wbr />Im<wbr />Texture<wbr />ID<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImU16"
+    title="ImU16 = uint16"><wbr />Im<wbr />U16<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImU32"
     title="ImU32 = uint32"><wbr />Im<wbr />U32<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImU64"
     title="ImU64 = uint64"><wbr />Im<wbr />U64<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImU8"
+    title="ImU8 = char"><wbr />Im<wbr />U8<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImWchar"
     title="ImWchar = uint16"><wbr />Im<wbr />Wchar<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#carray"
@@ -1912,12 +1920,12 @@ function main() {
     title="ImGuiColorEditFlags_AlphaPreviewHalf = 262144"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Alpha<wbr />Preview<wbr />Half<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiColorEditFlags_HDR"
     title="ImGuiColorEditFlags_HDR = 524288"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />HDR<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#ImGuiColorEditFlags_RGB"
-    title="ImGuiColorEditFlags_RGB = 1048576"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#ImGuiColorEditFlags_HSV"
-    title="ImGuiColorEditFlags_HSV = 2097152"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />HSV<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#ImGuiColorEditFlags_HEX"
-    title="ImGuiColorEditFlags_HEX = 4194304"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />HEX<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiColorEditFlags_DisplayRGB"
+    title="ImGuiColorEditFlags_DisplayRGB = 1048576"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Display<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiColorEditFlags_DisplayHSV"
+    title="ImGuiColorEditFlags_DisplayHSV = 2097152"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Display<wbr />HSV<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiColorEditFlags_DisplayHex"
+    title="ImGuiColorEditFlags_DisplayHex = 4194304"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Display<wbr />Hex<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiColorEditFlags_Uint8"
     title="ImGuiColorEditFlags_Uint8 = 8388608"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Uint8<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiColorEditFlags_Float"
@@ -1926,14 +1934,20 @@ function main() {
     title="ImGuiColorEditFlags_PickerHueBar = 33554432"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Picker<wbr />Hue<wbr />Bar<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiColorEditFlags_PickerHueWheel"
     title="ImGuiColorEditFlags_PickerHueWheel = 67108864"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Picker<wbr />Hue<wbr />Wheel<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#ImGuiColorEditFlags_InputsMask"
-    title="ImGuiColorEditFlags_InputsMask = 7340032"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Inputs<wbr />Mask<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiColorEditFlags_InputRGB"
+    title="ImGuiColorEditFlags_InputRGB = 134217728"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Input<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiColorEditFlags_InputHSV"
+    title="ImGuiColorEditFlags_InputHSV = 268435456"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Input<wbr />HSV<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiColorEditFlags_OptionsDefault"
+    title="ImGuiColorEditFlags_OptionsDefault = 177209344"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Options<wbr />Default<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiColorEditFlags_DisplayMask"
+    title="ImGuiColorEditFlags_DisplayMask = 7340032"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Display<wbr />Mask<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiColorEditFlags_DataTypeMask"
     title="ImGuiColorEditFlags_DataTypeMask = 25165824"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Data<wbr />Type<wbr />Mask<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiColorEditFlags_PickerMask"
     title="ImGuiColorEditFlags_PickerMask = 100663296"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Picker<wbr />Mask<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#ImGuiColorEditFlags_OptionsDefault"
-    title="ImGuiColorEditFlags_OptionsDefault = 42991616"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Options<wbr />Default<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiColorEditFlags_InputMask"
+    title="ImGuiColorEditFlags_InputMask = 402653184"><wbr />Im<wbr />Gui<wbr />Color<wbr />Edit<wbr />Flags_<wbr />Input<wbr />Mask<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiComboFlags_None"
     title="ImGuiComboFlags_None = 0"><wbr />Im<wbr />Gui<wbr />Combo<wbr />Flags_<wbr />None<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiComboFlags_PopupAlignLeft"
@@ -1978,20 +1992,28 @@ function main() {
     title="ImGuiConfigFlags_IsSRGB = 1048576"><wbr />Im<wbr />Gui<wbr />Config<wbr />Flags_<wbr />Is<wbr />SRGB<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiConfigFlags_IsTouchScreen"
     title="ImGuiConfigFlags_IsTouchScreen = 2097152"><wbr />Im<wbr />Gui<wbr />Config<wbr />Flags_<wbr />Is<wbr />Touch<wbr />Screen<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiDataType_S8"
+    title="ImGuiDataType_S8 = 0"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />S8<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiDataType_U8"
+    title="ImGuiDataType_U8 = 1"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />U8<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiDataType_S16"
+    title="ImGuiDataType_S16 = 2"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />S16<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiDataType_U16"
+    title="ImGuiDataType_U16 = 3"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />U16<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDataType_S32"
-    title="ImGuiDataType_S32 = 0"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />S32<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiDataType_S32 = 4"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />S32<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDataType_U32"
-    title="ImGuiDataType_U32 = 1"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />U32<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiDataType_U32 = 5"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />U32<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDataType_S64"
-    title="ImGuiDataType_S64 = 2"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />S64<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiDataType_S64 = 6"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />S64<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDataType_U64"
-    title="ImGuiDataType_U64 = 3"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />U64<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiDataType_U64 = 7"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />U64<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDataType_Float"
-    title="ImGuiDataType_Float = 4"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiDataType_Float = 8"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDataType_Double"
-    title="ImGuiDataType_Double = 5"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />Double<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiDataType_Double = 9"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />Double<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDataType_COUNT"
-    title="ImGuiDataType_COUNT = 6"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />COUNT<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiDataType_COUNT = 10"><wbr />Im<wbr />Gui<wbr />Data<wbr />Type_<wbr />COUNT<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDir_None"
     title="ImGuiDir_None = -1"><wbr />Im<wbr />Gui<wbr />Dir_<wbr />None<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiDir_Left"
@@ -2196,16 +2218,18 @@ function main() {
     title="ImGuiNavInput_TweakFast = 15"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Tweak<wbr />Fast<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiNavInput_KeyMenu"
     title="ImGuiNavInput_KeyMenu = 16"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Menu<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#ImGuiNavInput_KeyTab"
+    title="ImGuiNavInput_KeyTab = 17"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Tab<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiNavInput_KeyLeft"
-    title="ImGuiNavInput_KeyLeft = 17"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Left<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiNavInput_KeyLeft = 18"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Left<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiNavInput_KeyRight"
-    title="ImGuiNavInput_KeyRight = 18"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Right<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiNavInput_KeyRight = 19"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Right<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiNavInput_KeyUp"
-    title="ImGuiNavInput_KeyUp = 19"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Up<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiNavInput_KeyUp = 20"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Up<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiNavInput_KeyDown"
-    title="ImGuiNavInput_KeyDown = 20"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Down<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiNavInput_KeyDown = 21"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Key<wbr />Down<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiNavInput_COUNT"
-    title="ImGuiNavInput_COUNT = 21"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />COUNT<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="ImGuiNavInput_COUNT = 22"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />COUNT<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiNavInput_InternalStart"
     title="ImGuiNavInput_InternalStart = 16"><wbr />Im<wbr />Gui<wbr />Nav<wbr />Input_<wbr />Internal<wbr />Start<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ImGuiSelectableFlags_None"
@@ -2610,6 +2634,8 @@ function main() {
     title="getGlyphRangesKorean(self: ptr ImFontAtlas): ptr ImWchar"><wbr />get<wbr />Glyph<wbr />Ranges<wbr />Korean<span class="attachedType" style="visibility:hidden">ImWchar</span></a></li>
   <li><a class="reference" href="#getGlyphRangesThai%2Cptr.ImFontAtlas"
     title="getGlyphRangesThai(self: ptr ImFontAtlas): ptr ImWchar"><wbr />get<wbr />Glyph<wbr />Ranges<wbr />Thai<span class="attachedType" style="visibility:hidden">ImWchar</span></a></li>
+  <li><a class="reference" href="#getGlyphRangesVietnamese%2Cptr.ImFontAtlas"
+    title="getGlyphRangesVietnamese(self: ptr ImFontAtlas): ptr ImWchar"><wbr />get<wbr />Glyph<wbr />Ranges<wbr />Vietnamese<span class="attachedType" style="visibility:hidden">ImWchar</span></a></li>
   <li><a class="reference" href="#getMouseCursorTexData%2Cptr.ImFontAtlas%2CImGuiMouseCursor%2Cptr.ImVec2%2Cptr.ImVec2%2Cptr.ImVec2%2Cptr.ImVec2"
     title="getMouseCursorTexData(self: ptr ImFontAtlas; cursor: ImGuiMouseCursor;
                       out_offset: ptr ImVec2; out_size: ptr ImVec2;
@@ -3832,6 +3858,8 @@ function main() {
     title="igEndTabItem(): void"><wbr />ig<wbr />End<wbr />Tab<wbr />Item<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igEndTooltip%2C"
     title="igEndTooltip(): void"><wbr />ig<wbr />End<wbr />Tooltip<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#igGetBackgroundDrawList%2C"
+    title="igGetBackgroundDrawList(): ptr ImDrawList"><wbr />ig<wbr />Get<wbr />Background<wbr />Draw<wbr />List<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igGetClipboardText%2C"
     title="igGetClipboardText(): cstring"><wbr />ig<wbr />Get<wbr />Clipboard<wbr />Text<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igGetColorU32%2CImGuiCol%2Cfloat32"
@@ -3874,6 +3902,8 @@ function main() {
     title="igGetFontSize(): float32"><wbr />ig<wbr />Get<wbr />Font<wbr />Size<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igGetFontTexUvWhitePixel%2C"
     title="igGetFontTexUvWhitePixel(): ImVec2"><wbr />ig<wbr />Get<wbr />Font<wbr />Tex<wbr />Uv<wbr />White<wbr />Pixel<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#igGetForegroundDrawList%2C"
+    title="igGetForegroundDrawList(): ptr ImDrawList"><wbr />ig<wbr />Get<wbr />Foreground<wbr />Draw<wbr />List<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igGetFrameCount%2C"
     title="igGetFrameCount(): int32"><wbr />ig<wbr />Get<wbr />Frame<wbr />Count<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igGetFrameHeight%2C"
@@ -3902,8 +3932,6 @@ function main() {
     title="igGetMousePos(): ImVec2"><wbr />ig<wbr />Get<wbr />Mouse<wbr />Pos<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igGetMousePosOnOpeningCurrentPopup%2C"
     title="igGetMousePosOnOpeningCurrentPopup(): ImVec2"><wbr />ig<wbr />Get<wbr />Mouse<wbr />Pos<wbr />On<wbr />Opening<wbr />Current<wbr />Popup<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#igGetOverlayDrawList%2C"
-    title="igGetOverlayDrawList(): ptr ImDrawList"><wbr />ig<wbr />Get<wbr />Overlay<wbr />Draw<wbr />List<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igGetScrollMaxX%2C"
     title="igGetScrollMaxX(): float32"><wbr />ig<wbr />Get<wbr />Scroll<wbr />Max<wbr />X<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igGetScrollMaxY%2C"
@@ -3997,6 +4025,10 @@ function main() {
                      flags: ImGuiInputTextFlags = 0;
                      callback: ImGuiInputTextCallback = nil;
                      user_data: pointer = nil): bool"><wbr />ig<wbr />Input<wbr />Text<wbr />Multiline<span class="attachedType" style="visibility:hidden">ImGuiInputTextFlags</span></a></li>
+  <li><a class="reference" href="#igInputTextWithHint%2Ccstring%2Ccstring%2Ccstring%2Cuint32%2CImGuiInputTextFlags%2CImGuiInputTextCallback%2Cpointer"
+    title="igInputTextWithHint(label: cstring; hint: cstring; buf: cstring; buf_size: uint32;
+                    flags: ImGuiInputTextFlags = 0;
+                    callback: ImGuiInputTextCallback = nil; user_data: pointer = nil): bool"><wbr />ig<wbr />Input<wbr />Text<wbr />With<wbr />Hint<span class="attachedType" style="visibility:hidden">ImGuiInputTextFlags</span></a></li>
   <li><a class="reference" href="#igInvisibleButton%2Ccstring%2CImVec2"
     title="igInvisibleButton(str_id: cstring; size: ImVec2): bool"><wbr />ig<wbr />Invisible<wbr />Button<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igIsAnyItemActive%2C"
@@ -4079,11 +4111,11 @@ function main() {
   <li><a class="reference" href="#igLogText%2Ccstring"
     title="igLogText(fmt: cstring): void"><wbr />ig<wbr />Log<wbr />Text<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igLogToClipboard%2Cint32"
-    title="igLogToClipboard(max_depth: int32 = -1): void"><wbr />ig<wbr />Log<wbr />To<wbr />Clipboard<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="igLogToClipboard(auto_open_depth: int32 = -1): void"><wbr />ig<wbr />Log<wbr />To<wbr />Clipboard<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igLogToFile%2Cint32%2Ccstring"
-    title="igLogToFile(max_depth: int32 = -1; filename: cstring = nil): void"><wbr />ig<wbr />Log<wbr />To<wbr />File<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="igLogToFile(auto_open_depth: int32 = -1; filename: cstring = nil): void"><wbr />ig<wbr />Log<wbr />To<wbr />File<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igLogToTTY%2Cint32"
-    title="igLogToTTY(max_depth: int32 = -1): void"><wbr />ig<wbr />Log<wbr />To<wbr />TTY<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="igLogToTTY(auto_open_depth: int32 = -1): void"><wbr />ig<wbr />Log<wbr />To<wbr />TTY<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igMemAlloc%2Cuint32"
     title="igMemAlloc(size: uint32): pointer"><wbr />ig<wbr />Mem<wbr />Alloc<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igMemFree%2Cpointer"
@@ -4185,7 +4217,7 @@ function main() {
   <li><a class="reference" href="#igSetCursorScreenPos%2CImVec2"
     title="igSetCursorScreenPos(pos: ImVec2): void"><wbr />ig<wbr />Set<wbr />Cursor<wbr />Screen<wbr />Pos<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igSetDragDropPayload%2Ccstring%2Cpointer%2Cuint32%2CImGuiCond"
-    title="igSetDragDropPayload(`type`: cstring; data: pointer; size: uint32; cond: ImGuiCond = 0): bool"><wbr />ig<wbr />Set<wbr />Drag<wbr />Drop<wbr />Payload<span class="attachedType" style="visibility:hidden">ImGuiCond</span></a></li>
+    title="igSetDragDropPayload(`type`: cstring; data: pointer; sz: uint32; cond: ImGuiCond = 0): bool"><wbr />ig<wbr />Set<wbr />Drag<wbr />Drop<wbr />Payload<span class="attachedType" style="visibility:hidden">ImGuiCond</span></a></li>
   <li><a class="reference" href="#igSetItemAllowOverlap%2C"
     title="igSetItemAllowOverlap(): void"><wbr />ig<wbr />Set<wbr />Item<wbr />Allow<wbr />Overlap<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#igSetItemDefaultFocus%2C"
@@ -4543,8 +4575,14 @@ function main() {
 
 
 </dd>
+<a id="ImS16"></a>
+<dt><pre><a href="imgui.html#ImS16"><span class="Identifier">ImS16</span></a> <span class="Other">=</span> <span class="Identifier">int16</span></pre></dt>
+<dd>
+
+
+</dd>
 <a id="ImS32"></a>
-<dt><pre><a href="imgui.html#ImS32"><span class="Identifier">ImS32</span></a> <span class="Other">=</span> <span class="Identifier">uint32</span></pre></dt>
+<dt><pre><a href="imgui.html#ImS32"><span class="Identifier">ImS32</span></a> <span class="Other">=</span> <span class="Identifier">int32</span></pre></dt>
 <dd>
 
 
@@ -4555,8 +4593,20 @@ function main() {
 
 
 </dd>
+<a id="ImS8"></a>
+<dt><pre><a href="imgui.html#ImS8"><span class="Identifier">ImS8</span></a> <span class="Other">=</span> <span class="Identifier">char</span></pre></dt>
+<dd>
+
+
+</dd>
 <a id="ImTextureID"></a>
 <dt><pre><a href="imgui.html#ImTextureID"><span class="Identifier">ImTextureID</span></a> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="ImU16"></a>
+<dt><pre><a href="imgui.html#ImU16"><span class="Identifier">ImU16</span></a> <span class="Other">=</span> <span class="Identifier">uint16</span></pre></dt>
 <dd>
 
 
@@ -4569,6 +4619,12 @@ function main() {
 </dd>
 <a id="ImU64"></a>
 <dt><pre><a href="imgui.html#ImU64"><span class="Identifier">ImU64</span></a> <span class="Other">=</span> <span class="Identifier">uint64</span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="ImU8"></a>
+<dt><pre><a href="imgui.html#ImU8"><span class="Identifier">ImU8</span></a> <span class="Other">=</span> <span class="Identifier">char</span></pre></dt>
 <dd>
 
 
@@ -5762,20 +5818,20 @@ function main() {
 
 
 </dd>
-<a id="ImGuiColorEditFlags_RGB"></a>
-<dt><pre><span class="Identifier">ImGuiColorEditFlags_RGB</span> <span class="Other">=</span> <span class="DecNumber">1048576</span></pre></dt>
+<a id="ImGuiColorEditFlags_DisplayRGB"></a>
+<dt><pre><span class="Identifier">ImGuiColorEditFlags_DisplayRGB</span> <span class="Other">=</span> <span class="DecNumber">1048576</span></pre></dt>
 <dd>
 
 
 </dd>
-<a id="ImGuiColorEditFlags_HSV"></a>
-<dt><pre><span class="Identifier">ImGuiColorEditFlags_HSV</span> <span class="Other">=</span> <span class="DecNumber">2097152</span></pre></dt>
+<a id="ImGuiColorEditFlags_DisplayHSV"></a>
+<dt><pre><span class="Identifier">ImGuiColorEditFlags_DisplayHSV</span> <span class="Other">=</span> <span class="DecNumber">2097152</span></pre></dt>
 <dd>
 
 
 </dd>
-<a id="ImGuiColorEditFlags_HEX"></a>
-<dt><pre><span class="Identifier">ImGuiColorEditFlags_HEX</span> <span class="Other">=</span> <span class="DecNumber">4194304</span></pre></dt>
+<a id="ImGuiColorEditFlags_DisplayHex"></a>
+<dt><pre><span class="Identifier">ImGuiColorEditFlags_DisplayHex</span> <span class="Other">=</span> <span class="DecNumber">4194304</span></pre></dt>
 <dd>
 
 
@@ -5804,8 +5860,26 @@ function main() {
 
 
 </dd>
-<a id="ImGuiColorEditFlags_InputsMask"></a>
-<dt><pre><span class="Identifier">ImGuiColorEditFlags_InputsMask</span> <span class="Other">=</span> <span class="DecNumber">7340032</span></pre></dt>
+<a id="ImGuiColorEditFlags_InputRGB"></a>
+<dt><pre><span class="Identifier">ImGuiColorEditFlags_InputRGB</span> <span class="Other">=</span> <span class="DecNumber">134217728</span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="ImGuiColorEditFlags_InputHSV"></a>
+<dt><pre><span class="Identifier">ImGuiColorEditFlags_InputHSV</span> <span class="Other">=</span> <span class="DecNumber">268435456</span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="ImGuiColorEditFlags_OptionsDefault"></a>
+<dt><pre><span class="Identifier">ImGuiColorEditFlags_OptionsDefault</span> <span class="Other">=</span> <span class="DecNumber">177209344</span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="ImGuiColorEditFlags_DisplayMask"></a>
+<dt><pre><span class="Identifier">ImGuiColorEditFlags_DisplayMask</span> <span class="Other">=</span> <span class="DecNumber">7340032</span></pre></dt>
 <dd>
 
 
@@ -5822,8 +5896,8 @@ function main() {
 
 
 </dd>
-<a id="ImGuiColorEditFlags_OptionsDefault"></a>
-<dt><pre><span class="Identifier">ImGuiColorEditFlags_OptionsDefault</span> <span class="Other">=</span> <span class="DecNumber">42991616</span></pre></dt>
+<a id="ImGuiColorEditFlags_InputMask"></a>
+<dt><pre><span class="Identifier">ImGuiColorEditFlags_InputMask</span> <span class="Other">=</span> <span class="DecNumber">402653184</span></pre></dt>
 <dd>
 
 
@@ -5960,44 +6034,68 @@ function main() {
 
 
 </dd>
+<a id="ImGuiDataType_S8"></a>
+<dt><pre><span class="Identifier">ImGuiDataType_S8</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="ImGuiDataType_U8"></a>
+<dt><pre><span class="Identifier">ImGuiDataType_U8</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="ImGuiDataType_S16"></a>
+<dt><pre><span class="Identifier">ImGuiDataType_S16</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="ImGuiDataType_U16"></a>
+<dt><pre><span class="Identifier">ImGuiDataType_U16</span> <span class="Other">=</span> <span class="DecNumber">3</span></pre></dt>
+<dd>
+
+
+</dd>
 <a id="ImGuiDataType_S32"></a>
-<dt><pre><span class="Identifier">ImGuiDataType_S32</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiDataType_S32</span> <span class="Other">=</span> <span class="DecNumber">4</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiDataType_U32"></a>
-<dt><pre><span class="Identifier">ImGuiDataType_U32</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiDataType_U32</span> <span class="Other">=</span> <span class="DecNumber">5</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiDataType_S64"></a>
-<dt><pre><span class="Identifier">ImGuiDataType_S64</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiDataType_S64</span> <span class="Other">=</span> <span class="DecNumber">6</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiDataType_U64"></a>
-<dt><pre><span class="Identifier">ImGuiDataType_U64</span> <span class="Other">=</span> <span class="DecNumber">3</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiDataType_U64</span> <span class="Other">=</span> <span class="DecNumber">7</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiDataType_Float"></a>
-<dt><pre><span class="Identifier">ImGuiDataType_Float</span> <span class="Other">=</span> <span class="DecNumber">4</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiDataType_Float</span> <span class="Other">=</span> <span class="DecNumber">8</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiDataType_Double"></a>
-<dt><pre><span class="Identifier">ImGuiDataType_Double</span> <span class="Other">=</span> <span class="DecNumber">5</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiDataType_Double</span> <span class="Other">=</span> <span class="DecNumber">9</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiDataType_COUNT"></a>
-<dt><pre><span class="Identifier">ImGuiDataType_COUNT</span> <span class="Other">=</span> <span class="DecNumber">6</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiDataType_COUNT</span> <span class="Other">=</span> <span class="DecNumber">10</span></pre></dt>
 <dd>
 
 
@@ -6614,32 +6712,38 @@ function main() {
 
 
 </dd>
+<a id="ImGuiNavInput_KeyTab"></a>
+<dt><pre><span class="Identifier">ImGuiNavInput_KeyTab</span> <span class="Other">=</span> <span class="DecNumber">17</span></pre></dt>
+<dd>
+
+
+</dd>
 <a id="ImGuiNavInput_KeyLeft"></a>
-<dt><pre><span class="Identifier">ImGuiNavInput_KeyLeft</span> <span class="Other">=</span> <span class="DecNumber">17</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiNavInput_KeyLeft</span> <span class="Other">=</span> <span class="DecNumber">18</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiNavInput_KeyRight"></a>
-<dt><pre><span class="Identifier">ImGuiNavInput_KeyRight</span> <span class="Other">=</span> <span class="DecNumber">18</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiNavInput_KeyRight</span> <span class="Other">=</span> <span class="DecNumber">19</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiNavInput_KeyUp"></a>
-<dt><pre><span class="Identifier">ImGuiNavInput_KeyUp</span> <span class="Other">=</span> <span class="DecNumber">19</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiNavInput_KeyUp</span> <span class="Other">=</span> <span class="DecNumber">20</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiNavInput_KeyDown"></a>
-<dt><pre><span class="Identifier">ImGuiNavInput_KeyDown</span> <span class="Other">=</span> <span class="DecNumber">20</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiNavInput_KeyDown</span> <span class="Other">=</span> <span class="DecNumber">21</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="ImGuiNavInput_COUNT"></a>
-<dt><pre><span class="Identifier">ImGuiNavInput_COUNT</span> <span class="Other">=</span> <span class="DecNumber">21</span></pre></dt>
+<dt><pre><span class="Identifier">ImGuiNavInput_COUNT</span> <span class="Other">=</span> <span class="DecNumber">22</span></pre></dt>
 <dd>
 
 
@@ -7849,6 +7953,13 @@ function main() {
 <a id="getGlyphRangesThai,ptr.ImFontAtlas"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">getGlyphRangesThai</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="imgui.html#ImFontAtlas"><span class="Identifier">ImFontAtlas</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="imgui.html#ImWchar"><span class="Identifier">ImWchar</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;ImFontAtlas_GetGlyphRangesThai&quot;</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="getGlyphRangesVietnamese,ptr.ImFontAtlas"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">getGlyphRangesVietnamese</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="imgui.html#ImFontAtlas"><span class="Identifier">ImFontAtlas</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="imgui.html#ImWchar"><span class="Identifier">ImWchar</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span>
+    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;ImFontAtlas_GetGlyphRangesVietnamese&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -11969,6 +12080,13 @@ function main() {
 
 
 </dd>
+<a id="igGetBackgroundDrawList,"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igGetBackgroundDrawList</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="imgui.html#ImDrawList"><span class="Identifier">ImDrawList</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igGetBackgroundDrawList&quot;</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+</dd>
 <a id="igGetClipboardText,"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">igGetClipboardText</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
                                   <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igGetClipboardText&quot;</span></span><span class="Other">.}</span></span></pre></dt>
@@ -12110,6 +12228,13 @@ function main() {
 
 
 </dd>
+<a id="igGetForegroundDrawList,"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igGetForegroundDrawList</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="imgui.html#ImDrawList"><span class="Identifier">ImDrawList</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igGetForegroundDrawList&quot;</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+</dd>
 <a id="igGetFrameCount,"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">igGetFrameCount</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int32</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igGetFrameCount&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -12200,13 +12325,6 @@ function main() {
 <a id="igGetMousePosOnOpeningCurrentPopup,"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">igGetMousePosOnOpeningCurrentPopup</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <a href="imgui.html#ImVec2"><span class="Identifier">ImVec2</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igGetMousePosOnOpeningCurrentPopup&quot;</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-
-</dd>
-<a id="igGetOverlayDrawList,"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igGetOverlayDrawList</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="imgui.html#ImDrawList"><span class="Identifier">ImDrawList</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igGetOverlayDrawList&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -12477,6 +12595,16 @@ function main() {
                          <span class="Identifier">callback</span><span class="Other">:</span> <a href="imgui.html#ImGuiInputTextCallback"><span class="Identifier">ImGuiInputTextCallback</span></a> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">;</span>
                          <span class="Identifier">user_data</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igInputTextMultiline&quot;</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="igInputTextWithHint,cstring,cstring,cstring,uint32,ImGuiInputTextFlags,ImGuiInputTextCallback,pointer"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igInputTextWithHint</span><span class="Other">(</span><span class="Identifier">label</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">hint</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">buf</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">buf_size</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
+                        <span class="Identifier">flags</span><span class="Other">:</span> <a href="imgui.html#ImGuiInputTextFlags"><span class="Identifier">ImGuiInputTextFlags</span></a> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+                        <span class="Identifier">callback</span><span class="Other">:</span> <a href="imgui.html#ImGuiInputTextCallback"><span class="Identifier">ImGuiInputTextCallback</span></a> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">;</span>
+                        <span class="Identifier">user_data</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igInputTextWithHint&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -12755,21 +12883,21 @@ function main() {
 
 </dd>
 <a id="igLogToClipboard,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igLogToClipboard</span><span class="Other">(</span><span class="Identifier">max_depth</span><span class="Other">:</span> <span class="Identifier">int32</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igLogToClipboard</span><span class="Other">(</span><span class="Identifier">auto_open_depth</span><span class="Other">:</span> <span class="Identifier">int32</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igLogToClipboard&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="igLogToFile,int32,cstring"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igLogToFile</span><span class="Other">(</span><span class="Identifier">max_depth</span><span class="Other">:</span> <span class="Identifier">int32</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igLogToFile</span><span class="Other">(</span><span class="Identifier">auto_open_depth</span><span class="Other">:</span> <span class="Identifier">int32</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igLogToFile&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="igLogToTTY,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igLogToTTY</span><span class="Other">(</span><span class="Identifier">max_depth</span><span class="Other">:</span> <span class="Identifier">int32</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igLogToTTY</span><span class="Other">(</span><span class="Identifier">auto_open_depth</span><span class="Other">:</span> <span class="Identifier">int32</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igLogToTTY&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -13095,7 +13223,7 @@ function main() {
 
 </dd>
 <a id="igSetDragDropPayload,cstring,pointer,uint32,ImGuiCond"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igSetDragDropPayload</span><span class="Other">(</span><span class="Other">`</span><span class="Keyword">type</span><span class="Other">`</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">igSetDragDropPayload</span><span class="Other">(</span><span class="Other">`</span><span class="Keyword">type</span><span class="Other">`</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">sz</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
                          <span class="Identifier">cond</span><span class="Other">:</span> <a href="imgui.html#ImGuiCond"><span class="Identifier">ImGuiCond</span></a> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">imgui_dll</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;igSetDragDropPayload&quot;</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -13608,7 +13736,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-02-19 23:10:57 UTC</small>
+        <small>Made with Nim. Generated: 2019-03-13 17:33:36 UTC</small>
       </div>
     </div>
   </div>

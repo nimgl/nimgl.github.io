@@ -1,6 +1,6 @@
 ![logo](media/logo.png ':size=128x128')
 
-# NimGL <small>0.3.3</small>
+# NimGL <small>0.3.4</small>
 
 > Nim Game Library
 
