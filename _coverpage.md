@@ -9,5 +9,5 @@
 - Built-In Documentation
 - Cross Platform
 
-[GitHub](https://github.com/lmariscal/nimgl/)
+[GitHub](https://github.com/nimgl/nimgl/)
 [Learn More](home.md)

@@ -10,7 +10,7 @@ We try to keep this bindings as similar to the originals but we do have some use
 
 ## How to Install?
 You will need to have [Nimble](https://github.com/nim-lang/nimble) installed and
-[Nim](https://nim-lang.org/) 0.19.2 or above.
+[Nim](https://nim-lang.org/) 0.20.0 or above.
 
 ```shell
 nimble install nimgl
@@ -48,7 +48,7 @@ Image loading/decoding from file/memory: JPG, PNG, TGA, BMP, PSD, GIF, HDR, PIC.
 
 ## License
 
-NimGL is using the [MIT](https://github.com/lmariscal/nimgl/blob/master/LICENSE) license.
+NimGL is using the [MIT](https://github.com/nimgl/nimgl/blob/master/LICENSE) license.
 
 To learn more we recommend visiting
 [choosealicense.com](https://choosealicense.com/licenses/mit/).
