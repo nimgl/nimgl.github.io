@@ -941,7 +941,7 @@ function main() {
   <li><a class="reference" href="#GLFWCharmodsFun"
     title="GLFWCharmodsFun = proc (window: GLFWWindow; codepoint: uint32; mods: int32): void {.cdecl.}"><wbr />GLFWCharmods<wbr />Fun<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#GLFWDropFun"
-    title="GLFWDropFun = proc (window: GLFWWindow; path_count: int32; paths: ptr cstring): void {.
+    title="GLFWDropFun = proc (window: GLFWWindow; path_count: int32; paths: cstringArray): void {.
     cdecl.}"><wbr />GLFWDrop<wbr />Fun<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#GLFWMonitorFun"
     title="GLFWMonitorFun = proc (monitor: GLFWMonitor; event: int32): void {.cdecl.}"><wbr />GLFWMonitor<wbr />Fun<span class="attachedType"></span></a></li>
@@ -1179,8 +1179,8 @@ function main() {
     title="glfwGetVersion(major: ptr int32; minor: ptr int32; rev: ptr int32): void"><wbr />glfw<wbr />Get<wbr />Version<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#glfwGetVersionString"
     title="glfwGetVersionString(): cstring"><wbr />glfw<wbr />Get<wbr />Version<wbr />String<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#glfwGetError%2Cptr.cstring"
-    title="glfwGetError(description: ptr cstring): int32"><wbr />glfw<wbr />Get<wbr />Error<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#glfwGetError%2CcstringArray"
+    title="glfwGetError(description: cstringArray): int32"><wbr />glfw<wbr />Get<wbr />Error<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#glfwSetErrorCallback%2CGLFWErrorFun"
     title="glfwSetErrorCallback(callback: GLFWErrorFun): GLFWErrorFun"><wbr />glfw<wbr />Set<wbr />Error<wbr />Callback<span class="attachedType">GLFWErrorFun</span></a></li>
   <li><a class="reference" href="#glfwGetMonitors%2Cptr.int32"
@@ -1406,7 +1406,16 @@ function main() {
   <li><a class="reference" href="#glfwVulkanSupported"
     title="glfwVulkanSupported(): bool"><wbr />glfw<wbr />Vulkan<wbr />Supported<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#glfwGetRequiredInstanceExtensions%2Cptr.uint32"
-    title="glfwGetRequiredInstanceExtensions(count: ptr uint32): ptr cstring"><wbr />glfw<wbr />Get<wbr />Required<wbr />Instance<wbr />Extensions<span class="attachedType"></span></a></li>
+    title="glfwGetRequiredInstanceExtensions(count: ptr uint32): cstringArray"><wbr />glfw<wbr />Get<wbr />Required<wbr />Instance<wbr />Extensions<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#glfwGetInstanceProcAddress%2CVkInstance%2Ccstring"
+    title="glfwGetInstanceProcAddress(instance: VkInstance; procname: cstring): GLFWVkProc"><wbr />glfw<wbr />Get<wbr />Instance<wbr />Proc<wbr />Address<span class="attachedType">GLFWVkProc</span></a></li>
+  <li><a class="reference" href="#glfwGetPhysicalDevicePresentationSupport%2CVkInstance%2CVkPhysicalDevice%2Cuint32"
+    title="glfwGetPhysicalDevicePresentationSupport(instance: VkInstance;
+    device: VkPhysicalDevice; queuefamily: uint32): int32"><wbr />glfw<wbr />Get<wbr />Physical<wbr />Device<wbr />Presentation<wbr />Support<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#glfwCreateWindowSurface%2CVkInstance%2CGLFWWindow%2Cptr.VkAllocationCallbacks%2Cptr.VkSurfaceKHR"
+    title="glfwCreateWindowSurface(instance: VkInstance; window: GLFWWindow;
+                        allocator: ptr VkAllocationCallbacks;
+                        surface: ptr VkSurfaceKHR): VkResult"><wbr />glfw<wbr />Create<wbr />Window<wbr />Surface<span class="attachedType">GLFWWindow</span></a></li>
   <li><a class="reference" href="#glfwCreateWindow%2Cint32%2Cint32%2Ccstring%2CGLFWMonitor%2CGLFWWindow%2Cbool"
     title="glfwCreateWindow(width: int32; height: int32; title: cstring = &quot;NimGL&quot;;
                  monitor: GLFWMonitor = nil; share: GLFWWindow = nil; icon: bool = true): GLFWWindow"><wbr />glfw<wbr />Create<wbr />Window<span class="attachedType">GLFWWindow</span></a></li>
@@ -1458,7 +1467,7 @@ function main() {
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="logo.html">logo</a>
+<a class="reference external" href="logo.html">logo</a>, <a class="reference external" href="vulkan.html">vulkan</a>
 </dl></div>
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
@@ -1880,7 +1889,7 @@ This describes the input state of a gamepad.
 
 </dd>
 <a id="GLFWDropFun"></a>
-<dt><pre><a href="glfw.html#GLFWDropFun"><span class="Identifier">GLFWDropFun</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">;</span> <span class="Identifier">path_count</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">paths</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><a href="glfw.html#GLFWDropFun"><span class="Identifier">GLFWDropFun</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">;</span> <span class="Identifier">path_count</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">paths</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -2925,8 +2934,8 @@ Originally GLFW_CURSOR but conflicts with GLFWCursor type
 
 
 </dd>
-<a id="glfwGetError,ptr.cstring"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetError%2Cptr.cstring"><span class="Identifier">glfwGetError</span></a><span class="Other">(</span><span class="Identifier">description</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int32</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetError&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="glfwGetError,cstringArray"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetError%2CcstringArray"><span class="Identifier">glfwGetError</span></a><span class="Other">(</span><span class="Identifier">description</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int32</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetError&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns and clears the last error for the calling thread.</p>
@@ -5012,7 +5021,7 @@ Originally GLFW_CURSOR but conflicts with GLFWCursor type
 
 </dd>
 <a id="glfwGetRequiredInstanceExtensions,ptr.uint32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetRequiredInstanceExtensions%2Cptr.uint32"><span class="Identifier">glfwGetRequiredInstanceExtensions</span></a><span class="Other">(</span><span class="Identifier">count</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cstring</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetRequiredInstanceExtensions%2Cptr.uint32"><span class="Identifier">glfwGetRequiredInstanceExtensions</span></a><span class="Other">(</span><span class="Identifier">count</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstringArray</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetRequiredInstanceExtensions&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -5027,6 +5036,78 @@ Originally GLFW_CURSOR but conflicts with GLFWCursor type
 <p>@pointer_lifetime The returned array is allocated and freed by GLFW.  You should not free it yourself.  It is guaranteed to be valid only until the library is terminated.</p>
 <p>@thread_safety This function may be called from any thread.</p>
 <p>@sa  vulkan_ext @sa  glfwCreateWindowSurface</p>
+<p>@since Added in version 3.2.</p>
+<p>@ingroup vulkan</p>
+
+
+</dd>
+<a id="glfwGetInstanceProcAddress,VkInstance,cstring"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetInstanceProcAddress%2CVkInstance%2Ccstring"><span class="Identifier">glfwGetInstanceProcAddress</span></a><span class="Other">(</span><span class="Identifier">instance</span><span class="Other">:</span> <a href="vulkan.html#VkInstance"><span class="Identifier">VkInstance</span></a><span class="Other">;</span> <span class="Identifier">procname</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <a href="glfw.html#GLFWVkProc"><span class="Identifier">GLFWVkProc</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetInstanceProcAddress&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>@brief Returns the address of the specified Vulkan instance function.</p>
+<p>This function returns the address of the specified Vulkan core or extension function for the specified instance.  If instance is set to <tt class="docutils literal"><span class="pre">NULL</span></tt> it can return any function exported from the Vulkan loader, including at least the following functions:</p>
+<ul class="simple"><li><tt class="docutils literal"><span class="pre">vkEnumerateInstanceExtensionProperties</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">vkEnumerateInstanceLayerProperties</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">vkCreateInstance</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">vkGetInstanceProcAddr</span></tt></li>
+</ul>
+<p>If Vulkan is not available on the machine, this function returns <tt class="docutils literal"><span class="pre">NULL</span></tt> and generates a  GLFW_API_UNAVAILABLE error.  Call  glfwVulkanSupported to check whether Vulkan is at least minimally available.</p>
+<p>This function is equivalent to calling <tt class="docutils literal"><span class="pre">vkGetInstanceProcAddr</span></tt> with a platform-specific query of the Vulkan loader as a fallback.</p>
+<p>@param[in] instance The Vulkan instance to query, or <tt class="docutils literal"><span class="pre">NULL</span></tt> to retrieve functions related to instance creation. @param[in] procname The ASCII encoded name of the function. @return The address of the function, or <tt class="docutils literal"><span class="pre">NULL</span></tt> if an error occurred.</p>
+<p>@errors Possible errors include  GLFW_NOT_INITIALIZED and GLFW_API_UNAVAILABLE.</p>
+<p>@pointer_lifetime The returned function pointer is valid until the library is terminated.</p>
+<p>@thread_safety This function may be called from any thread.</p>
+<p>@sa  vulkan_proc</p>
+<p>@since Added in version 3.2.</p>
+<p>@ingroup vulkan</p>
+
+
+</dd>
+<a id="glfwGetPhysicalDevicePresentationSupport,VkInstance,VkPhysicalDevice,uint32"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetPhysicalDevicePresentationSupport%2CVkInstance%2CVkPhysicalDevice%2Cuint32"><span class="Identifier">glfwGetPhysicalDevicePresentationSupport</span></a><span class="Other">(</span><span class="Identifier">instance</span><span class="Other">:</span> <a href="vulkan.html#VkInstance"><span class="Identifier">VkInstance</span></a><span class="Other">;</span>
+    <span class="Identifier">device</span><span class="Other">:</span> <a href="vulkan.html#VkPhysicalDevice"><span class="Identifier">VkPhysicalDevice</span></a><span class="Other">;</span> <span class="Identifier">queuefamily</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int32</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetPhysicalDevicePresentationSupport&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>@brief Returns whether the specified queue family can present images.</p>
+<p>This function returns whether the specified queue family of the specified physical device supports presentation to the platform GLFW was built for.</p>
+<p>If Vulkan or the required window surface creation instance extensions are not available on the machine, or if the specified instance was not created with the required extensions, this function returns <tt class="docutils literal"><span class="pre">GLFW_FALSE</span></tt> and generates a  GLFW_API_UNAVAILABLE error.  Call  glfwVulkanSupported to check whether Vulkan is at least minimally available and glfwGetRequiredInstanceExtensions to check what instance extensions are required.</p>
+<p>@param[in] instance The instance that the physical device belongs to. @param[in] device The physical device that the queue family belongs to. @param[in] queuefamily The index of the queue family to query. @return <tt class="docutils literal"><span class="pre">GLFW_TRUE</span></tt> if the queue family supports presentation, or <tt class="docutils literal"><span class="pre">GLFW_FALSE</span></tt> otherwise.</p>
+<p>@errors Possible errors include  GLFW_NOT_INITIALIZED, GLFW_API_UNAVAILABLE and  GLFW_PLATFORM_ERROR.</p>
+<p>@remark @macos This function currently always returns <tt class="docutils literal"><span class="pre">GLFW_TRUE</span></tt>, as the <tt class="docutils literal"><span class="pre">VK_MVK_macos_surface</span></tt> extension does not provide a <tt class="docutils literal"><span class="pre">vkGetPhysicalDevice*PresentationSupport</span></tt> type function.</p>
+<p>@thread_safety This function may be called from any thread.  For synchronization details of Vulkan objects, see the Vulkan specification.</p>
+<p>@sa  vulkan_present</p>
+<p>@since Added in version 3.2.</p>
+<p>@ingroup vulkan</p>
+
+
+</dd>
+<a id="glfwCreateWindowSurface,VkInstance,GLFWWindow,ptr.VkAllocationCallbacks,ptr.VkSurfaceKHR"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#glfwCreateWindowSurface%2CVkInstance%2CGLFWWindow%2Cptr.VkAllocationCallbacks%2Cptr.VkSurfaceKHR"><span class="Identifier">glfwCreateWindowSurface</span></a><span class="Other">(</span><span class="Identifier">instance</span><span class="Other">:</span> <a href="vulkan.html#VkInstance"><span class="Identifier">VkInstance</span></a><span class="Other">;</span> <span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">;</span>
+                            <span class="Identifier">allocator</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="vulkan.html#VkAllocationCallbacks"><span class="Identifier">VkAllocationCallbacks</span></a><span class="Other">;</span>
+                            <span class="Identifier">surface</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="vulkan.html#VkSurfaceKHR"><span class="Identifier">VkSurfaceKHR</span></a><span class="Other">)</span><span class="Other">:</span> <a href="vulkan.html#VkResult"><span class="Identifier">VkResult</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwCreateWindowSurface&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>@brief Creates a Vulkan surface for the specified window.</p>
+<p>This function creates a Vulkan surface for the specified window.</p>
+<p>If the Vulkan loader or at least one minimally functional ICD were not found, this function returns <tt class="docutils literal"><span class="pre">VK_ERROR_INITIALIZATION_FAILED</span></tt> and generates a GLFW_API_UNAVAILABLE error.  Call  glfwVulkanSupported to check whether Vulkan is at least minimally available.</p>
+<p>If the required window surface creation instance extensions are not available or if the specified instance was not created with these extensions enabled, this function returns <tt class="docutils literal"><span class="pre">VK_ERROR_EXTENSION_NOT_PRESENT</span></tt> and generates a  GLFW_API_UNAVAILABLE error.  Call glfwGetRequiredInstanceExtensions to check what instance extensions are required.</p>
+<p>The window surface cannot be shared with another API so the window must have been created with the client api hint set to <tt class="docutils literal"><span class="pre">GLFW_NO_API</span></tt> otherwise it generates a  GLFW_INVALID_VALUE error and returns <tt class="docutils literal"><span class="pre">VK_ERROR_NATIVE_WINDOW_IN_USE_KHR</span></tt>.</p>
+<p>The window surface must be destroyed before the specified Vulkan instance. It is the responsibility of the caller to destroy the window surface.  GLFW does not destroy it for you.  Call <tt class="docutils literal"><span class="pre">vkDestroySurfaceKHR</span></tt> to destroy the surface.</p>
+<p>@param[in] instance The Vulkan instance to create the surface in. @param[in] window The window to create the surface for. @param[in] allocator The allocator to use, or <tt class="docutils literal"><span class="pre">NULL</span></tt> to use the default allocator. @param[out] surface Where to store the handle of the surface.  This is set to <tt class="docutils literal"><span class="pre">VK_NULL_HANDLE</span></tt> if an error occurred. @return <tt class="docutils literal"><span class="pre">VK_SUCCESS</span></tt> if successful, or a Vulkan error code if an error occurred.</p>
+<p>@errors Possible errors include  GLFW_NOT_INITIALIZED, GLFW_API_UNAVAILABLE,  GLFW_PLATFORM_ERROR and  GLFW_INVALID_VALUE</p>
+<p>@remark If an error occurs before the creation call is made, GLFW returns</p>
+<dl class="docutils"><dt>the Vulkan error code most appropriate for the error.  Appropriate use of</dt>
+<dd>glfwVulkanSupported and  glfwGetRequiredInstanceExtensions should</dd>
+</dl>
+<p>eliminate almost all occurrences of these errors.</p>
+<p>@remark @macos This function currently only supports the <tt class="docutils literal"><span class="pre">VK_MVK_macos_surface</span></tt> extension from MoltenVK.</p>
+<p>@remark @macos This function creates and sets a <tt class="docutils literal"><span class="pre">CAMetalLayer</span></tt> instance for the window content view, which is required for MoltenVK to function.</p>
+<p>@thread_safety This function may be called from any thread.  For synchronization details of Vulkan objects, see the Vulkan specification.</p>
+<p>@sa  vulkan_surface @sa  glfwGetRequiredInstanceExtensions</p>
 <p>@since Added in version 3.2.</p>
 <p>@ingroup vulkan</p>
 
@@ -5140,7 +5221,7 @@ Creates a window and its associated OpenGL or OpenGL ES Utility to create the wi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-11-03 21:27:24 UTC</small>
+        <small>Made with Nim. Generated: 2019-11-05 00:52:00 UTC</small>
       </div>
     </div>
   </div>
