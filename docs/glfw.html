@@ -958,7 +958,7 @@ function main() {
   <li><a class="reference" href="#GLFWVersionMinor"
     title="GLFWVersionMinor = 3"><wbr />GLFWVersion<wbr />Minor<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#GLFWVersionRevision"
-    title="GLFWVersionRevision = 1"><wbr />GLFWVersion<wbr />Revision<span class="attachedType"></span></a></li>
+    title="GLFWVersionRevision = 2"><wbr />GLFWVersion<wbr />Revision<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#GLFWTrue"
     title="GLFWTrue = 1"><wbr />GLFWTrue<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#GLFWFalse"
@@ -1353,8 +1353,8 @@ function main() {
     title="setScrollCallback(window: GLFWWindow; callback: GLFWScrollFun): GLFWScrollFun"><wbr />set<wbr />Scroll<wbr />Callback<span class="attachedType">GLFWWindow</span></a></li>
   <li><a class="reference" href="#setDropCallback%2CGLFWWindow%2CGLFWDropFun"
     title="setDropCallback(window: GLFWWindow; callback: GLFWDropFun): GLFWDropFun"><wbr />set<wbr />Drop<wbr />Callback<span class="attachedType">GLFWWindow</span></a></li>
-  <li><a class="reference" href="#glfwJoystickPresent%2Cbool"
-    title="glfwJoystickPresent(jid: bool): bool"><wbr />glfw<wbr />Joystick<wbr />Present<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#glfwJoystickPresent%2Cint32"
+    title="glfwJoystickPresent(jid: int32): bool"><wbr />glfw<wbr />Joystick<wbr />Present<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#glfwGetJoystickAxes%2Cint32%2Cptr.int32"
     title="glfwGetJoystickAxes(jid: int32; count: ptr int32): ptr float"><wbr />glfw<wbr />Get<wbr />Joystick<wbr />Axes<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#glfwGetJoystickButtons%2Cint32%2Cptr.int32"
@@ -1377,8 +1377,8 @@ function main() {
     title="glfwUpdateGamepadMappings(string: cstring): int32"><wbr />glfw<wbr />Update<wbr />Gamepad<wbr />Mappings<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#glfwGetGamepadName%2Cint32"
     title="glfwGetGamepadName(jid: int32): cstring"><wbr />glfw<wbr />Get<wbr />Gamepad<wbr />Name<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#glfwGetGamepadState%2Cbool%2Cptr.GLFWGamepadState"
-    title="glfwGetGamepadState(jid: bool; state: ptr GLFWGamepadState): bool"><wbr />glfw<wbr />Get<wbr />Gamepad<wbr />State<span class="attachedType">GLFWGamepadState</span></a></li>
+  <li><a class="reference" href="#glfwGetGamepadState%2Cint32%2Cptr.GLFWGamepadState"
+    title="glfwGetGamepadState(jid: int32; state: ptr GLFWGamepadState): bool"><wbr />glfw<wbr />Get<wbr />Gamepad<wbr />State<span class="attachedType">GLFWGamepadState</span></a></li>
   <li><a class="reference" href="#setClipboardString%2CGLFWWindow%2Ccstring"
     title="setClipboardString(window: GLFWWindow; string: cstring): void"><wbr />set<wbr />Clipboard<wbr />String<span class="attachedType">GLFWWindow</span></a></li>
   <li><a class="reference" href="#getClipboardString%2CGLFWWindow"
@@ -1953,7 +1953,7 @@ This describes the input state of a gamepad.
 
 </dd>
 <a id="GLFWVersionRevision"></a>
-<dt><pre><a href="glfw.html#GLFWVersionRevision"><span class="Identifier">GLFWVersionRevision</span></a> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+<dt><pre><a href="glfw.html#GLFWVersionRevision"><span class="Identifier">GLFWVersionRevision</span></a> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
 <dd>
 
 <p>@brief The revision number of the GLFW library.</p>
@@ -4507,8 +4507,8 @@ Originally GLFW_CURSOR but conflicts with GLFWCursor type
 
 
 </dd>
-<a id="glfwJoystickPresent,bool"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#glfwJoystickPresent%2Cbool"><span class="Identifier">glfwJoystickPresent</span></a><span class="Other">(</span><span class="Identifier">jid</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwJoystickPresent&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="glfwJoystickPresent,int32"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#glfwJoystickPresent%2Cint32"><span class="Identifier">glfwJoystickPresent</span></a><span class="Other">(</span><span class="Identifier">jid</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwJoystickPresent&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns whether the specified joystick is present.</p>
@@ -4771,8 +4771,8 @@ Originally GLFW_CURSOR but conflicts with GLFWCursor type
 
 
 </dd>
-<a id="glfwGetGamepadState,bool,ptr.GLFWGamepadState"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetGamepadState%2Cbool%2Cptr.GLFWGamepadState"><span class="Identifier">glfwGetGamepadState</span></a><span class="Other">(</span><span class="Identifier">jid</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">;</span> <span class="Identifier">state</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="glfw.html#GLFWGamepadState"><span class="Identifier">GLFWGamepadState</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<a id="glfwGetGamepadState,int32,ptr.GLFWGamepadState"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetGamepadState%2Cint32%2Cptr.GLFWGamepadState"><span class="Identifier">glfwGetGamepadState</span></a><span class="Other">(</span><span class="Identifier">jid</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">state</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="glfw.html#GLFWGamepadState"><span class="Identifier">GLFWGamepadState</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetGamepadState&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -5032,7 +5032,7 @@ Originally GLFW_CURSOR but conflicts with GLFWCursor type
 <p>@param[out] count Where to store the number of extensions in the returned array.  This is set to zero if an error occurred. @return An array of ASCII encoded extension names, or <tt class="docutils literal"><span class="pre">NULL</span></tt> if an error occurred.</p>
 <p>@errors Possible errors include  GLFW_NOT_INITIALIZED and GLFW_API_UNAVAILABLE.</p>
 <p>@remark Additional extensions may be required by future versions of GLFW. You should check if any extensions you wish to enable are already in the returned array, as it is an error to specify an extension more than once in the <tt class="docutils literal"><span class="pre">VkInstanceCreateInfo</span></tt> struct.</p>
-<p>@remark @macos This function currently only supports the <tt class="docutils literal"><span class="pre">VK_MVK_macos_surface</span></tt> extension from MoltenVK.</p>
+<p>@remark @macos This function currently supports either the <tt class="docutils literal"><span class="pre">VK_MVK_macos_surface</span></tt> extension from MoltenVK or <tt class="docutils literal"><span class="pre">VK_EXT_metal_surface</span></tt> extension.</p>
 <p>@pointer_lifetime The returned array is allocated and freed by GLFW.  You should not free it yourself.  It is guaranteed to be valid only until the library is terminated.</p>
 <p>@thread_safety This function may be called from any thread.</p>
 <p>@sa  vulkan_ext @sa  glfwCreateWindowSurface</p>
@@ -5221,7 +5221,7 @@ Creates a window and its associated OpenGL or OpenGL ES Utility to create the wi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-11-05 00:52:00 UTC</small>
+        <small>Made with Nim. Generated: 2020-02-10 14:31:22 UTC</small>
       </div>
     </div>
   </div>
