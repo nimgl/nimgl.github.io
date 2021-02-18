@@ -47,21 +47,12 @@ function main() {
 
   toggleSwitch.addEventListener('change', switchTheme, false);
 
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
 
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', "dark");
-    toggleSwitch.checked = true;
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    document.documentElement.setAttribute('data-theme', "light");
-    toggleSwitch.checked = false;
-  } else {
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme) {
-      document.documentElement.setAttribute('data-theme', currentTheme);
-
-      if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-      }
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true;
     }
   }
 }
@@ -83,6 +74,9 @@ function main() {
   </div>
   <div id="global-links">
     <ul class="simple">
+    <li>
+      <a href="theindex.html">Index</a>
+    </li>
     </ul>
   </div>
   <div id="searchInputDiv">
@@ -107,14 +101,26 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">igOpenGL3NewFrame
+      <li><a class="reference" href="#igOpenGL3NewFrame"
+    title="igOpenGL3NewFrame()">igOpenGL3NewFrame</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">igOpenGL3Init
       <li><a class="reference" href="#igOpenGL3Init"
-    title="igOpenGL3Init(): bool"><wbr />ig<wbr />Open<wbr />GL3Init<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#igOpenGL3NewFrame"
-    title="igOpenGL3NewFrame()"><wbr />ig<wbr />Open<wbr />GL3New<wbr />Frame<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#igOpenGL3RenderDrawData%2Cptr.ImDrawData"
-    title="igOpenGL3RenderDrawData(data: ptr ImDrawData)"><wbr />ig<wbr />Open<wbr />GL3Render<wbr />Draw<wbr />Data<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#igOpenGL3Shutdown"
-    title="igOpenGL3Shutdown()"><wbr />ig<wbr />Open<wbr />GL3Shutdown<span class="attachedType"></span></a></li>
+    title="igOpenGL3Init(): bool">igOpenGL3Init</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">igOpenGL3RenderDrawData
+      <li><a class="reference" href="#igOpenGL3RenderDrawData%2Cptr.ImDrawData"
+    title="igOpenGL3RenderDrawData(data: ptr ImDrawData)">igOpenGL3RenderDrawData,<wbr>ptr.ImDrawData</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">igOpenGL3Shutdown
+      <li><a class="reference" href="#igOpenGL3Shutdown"
+    title="igOpenGL3Shutdown()">igOpenGL3Shutdown</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -145,7 +151,8 @@ Initiate Opengl, this proc does nothing here because I assume that you are using
 
 </dd>
 <a id="igOpenGL3NewFrame"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#igOpenGL3NewFrame"><span class="Identifier">igOpenGL3NewFrame</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#igOpenGL3NewFrame"><span class="Identifier">igOpenGL3NewFrame</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                           <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -176,7 +183,7 @@ Initiate Opengl, this proc does nothing here because I assume that you are using
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-04-17 21:06:56 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-02-18 06:41:08 UTC</small>
       </div>
     </div>
   </div>

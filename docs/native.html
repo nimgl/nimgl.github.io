@@ -47,21 +47,12 @@ function main() {
 
   toggleSwitch.addEventListener('change', switchTheme, false);
 
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
 
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', "dark");
-    toggleSwitch.checked = true;
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    document.documentElement.setAttribute('data-theme', "light");
-    toggleSwitch.checked = false;
-  } else {
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme) {
-      document.documentElement.setAttribute('data-theme', currentTheme);
-
-      if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-      }
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true;
     }
   }
 }
@@ -83,6 +74,9 @@ function main() {
   </div>
   <div id="global-links">
     <ul class="simple">
+    <li>
+      <a href="theindex.html">Index</a>
+    </li>
     </ul>
   </div>
   <div id="searchInputDiv">
@@ -107,56 +101,128 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#getWin32Adapter%2CGLFWMonitor"
-    title="getWin32Adapter(monitor: GLFWMonitor): cstring"><wbr />get<wbr />Win32Adapter<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getWin32Monitor%2CGLFWMonitor"
-    title="getWin32Monitor(monitor: GLFWMonitor): cstring"><wbr />get<wbr />Win32Monitor<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getWin32Window%2CGLFWWindow"
-    title="getWin32Window(window: GLFWWindow): pointer"><wbr />get<wbr />Win32Window<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getWGLContext%2CGLFWWindow"
-    title="getWGLContext(window: GLFWWindow): pointer"><wbr />get<wbr />WGLContext<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getCocoaMonitor%2CGLFWMonitor"
-    title="getCocoaMonitor(monitor: GLFWMonitor): pointer"><wbr />get<wbr />Cocoa<wbr />Monitor<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getCocoaWindow%2CGLFWWindow"
-    title="getCocoaWindow(window: GLFWWindow): pointer"><wbr />get<wbr />Cocoa<wbr />Window<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getNSGLContext%2CGLFWWindow"
-    title="getNSGLContext(window: GLFWWindow): pointer"><wbr />get<wbr />NSGLContext<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#glfwGetX11Display"
-    title="glfwGetX11Display(): pointer"><wbr />glfw<wbr />Get<wbr />X11Display<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getX11Adapter%2CGLFWMonitor"
-    title="getX11Adapter(monitor: GLFWMonitor): pointer"><wbr />get<wbr />X11Adapter<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getX11Monitor%2CGLFWMonitor"
-    title="getX11Monitor(monitor: GLFWMonitor): pointer"><wbr />get<wbr />X11Monitor<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getX11Window%2CGLFWWindow"
-    title="getX11Window(window: GLFWWindow): pointer"><wbr />get<wbr />X11Window<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#glfwSetX11SelectionString%2Ccstring"
-    title="glfwSetX11SelectionString(string: cstring): void"><wbr />glfw<wbr />Set<wbr />X11Selection<wbr />String<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#glfwGetX11SelectionString"
-    title="glfwGetX11SelectionString(): cstring"><wbr />glfw<wbr />Get<wbr />X11Selection<wbr />String<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getGLXContext%2CGLFWWindow"
-    title="getGLXContext(window: GLFWWindow): pointer"><wbr />get<wbr />GLXContext<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getGLXWindow%2CGLFWWindow"
-    title="getGLXWindow(window: GLFWWindow): pointer"><wbr />get<wbr />GLXWindow<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getWaylandDisplay"
-    title="getWaylandDisplay(): pointer"><wbr />get<wbr />Wayland<wbr />Display<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getWaylandMonitor%2CGLFWMonitor"
-    title="getWaylandMonitor(monitor: GLFWMonitor): pointer"><wbr />get<wbr />Wayland<wbr />Monitor<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getWaylandWindow%2CGLFWWindow"
-    title="getWaylandWindow(window: GLFWWindow): pointer"><wbr />get<wbr />Wayland<wbr />Window<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#glfwGetEGLDisplay"
-    title="glfwGetEGLDisplay(): pointer"><wbr />glfw<wbr />Get<wbr />EGLDisplay<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getEGLContext%2CGLFWWindow"
-    title="getEGLContext(window: GLFWWindow): pointer"><wbr />get<wbr />EGLContext<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getEGLSurface%2CGLFWWindow"
-    title="getEGLSurface(window: GLFWWindow): pointer"><wbr />get<wbr />EGLSurface<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getOSMesaColorBuffer%2CGLFWWindow%2Cptr.int32%2Cptr.int32%2Cptr.int32%2Cptr.pointer"
+      <ul class="simple nested-toc-section">getX11Monitor
+      <li><a class="reference" href="#getX11Monitor%2CGLFWMonitor"
+    title="getX11Monitor(monitor: GLFWMonitor): pointer">getX11Monitor,<wbr>GLFWMonitor</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">glfwSetX11SelectionString
+      <li><a class="reference" href="#glfwSetX11SelectionString%2Ccstring"
+    title="glfwSetX11SelectionString(string: cstring): void">glfwSetX11SelectionString,<wbr>cstring</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getNSGLContext
+      <li><a class="reference" href="#getNSGLContext%2CGLFWWindow"
+    title="getNSGLContext(window: GLFWWindow): pointer">getNSGLContext,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getWaylandMonitor
+      <li><a class="reference" href="#getWaylandMonitor%2CGLFWMonitor"
+    title="getWaylandMonitor(monitor: GLFWMonitor): pointer">getWaylandMonitor,<wbr>GLFWMonitor</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">glfwGetEGLDisplay
+      <li><a class="reference" href="#glfwGetEGLDisplay"
+    title="glfwGetEGLDisplay(): pointer">glfwGetEGLDisplay</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getEGLSurface
+      <li><a class="reference" href="#getEGLSurface%2CGLFWWindow"
+    title="getEGLSurface(window: GLFWWindow): pointer">getEGLSurface,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getCocoaWindow
+      <li><a class="reference" href="#getCocoaWindow%2CGLFWWindow"
+    title="getCocoaWindow(window: GLFWWindow): pointer">getCocoaWindow,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getOSMesaContext
+      <li><a class="reference" href="#getOSMesaContext%2CGLFWWindow"
+    title="getOSMesaContext(window: GLFWWindow): pointer">getOSMesaContext,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getOSMesaColorBuffer
+      <li><a class="reference" href="#getOSMesaColorBuffer%2CGLFWWindow%2Cptr.int32%2Cptr.int32%2Cptr.int32%2Cptr.pointer"
     title="getOSMesaColorBuffer(window: GLFWWindow; width: ptr int32; height: ptr int32;
-                     format: ptr int32; buffer: ptr pointer): int32"><wbr />get<wbr />OSMesa<wbr />Color<wbr />Buffer<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getOSMesaDepthBuffer%2CGLFWWindow%2Cptr.int32%2Cptr.int32%2Cptr.int32%2Cptr.pointer"
+                     format: ptr int32; buffer: ptr pointer): int32">getOSMesaColorBuffer,<wbr>GLFWWindow,<wbr>ptr.int32,<wbr>ptr.int32,<wbr>ptr.int32,<wbr>ptr.pointer</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">glfwGetX11SelectionString
+      <li><a class="reference" href="#glfwGetX11SelectionString"
+    title="glfwGetX11SelectionString(): cstring">glfwGetX11SelectionString</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getOSMesaDepthBuffer
+      <li><a class="reference" href="#getOSMesaDepthBuffer%2CGLFWWindow%2Cptr.int32%2Cptr.int32%2Cptr.int32%2Cptr.pointer"
     title="getOSMesaDepthBuffer(window: GLFWWindow; width: ptr int32; height: ptr int32;
-                     bytesPerValue: ptr int32; buffer: ptr pointer): int32"><wbr />get<wbr />OSMesa<wbr />Depth<wbr />Buffer<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getOSMesaContext%2CGLFWWindow"
-    title="getOSMesaContext(window: GLFWWindow): pointer"><wbr />get<wbr />OSMesa<wbr />Context<span class="attachedType"></span></a></li>
+                     bytesPerValue: ptr int32; buffer: ptr pointer): int32">getOSMesaDepthBuffer,<wbr>GLFWWindow,<wbr>ptr.int32,<wbr>ptr.int32,<wbr>ptr.int32,<wbr>ptr.pointer</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">glfwGetX11Display
+      <li><a class="reference" href="#glfwGetX11Display"
+    title="glfwGetX11Display(): pointer">glfwGetX11Display</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getWin32Monitor
+      <li><a class="reference" href="#getWin32Monitor%2CGLFWMonitor"
+    title="getWin32Monitor(monitor: GLFWMonitor): cstring">getWin32Monitor,<wbr>GLFWMonitor</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getWaylandWindow
+      <li><a class="reference" href="#getWaylandWindow%2CGLFWWindow"
+    title="getWaylandWindow(window: GLFWWindow): pointer">getWaylandWindow,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getX11Window
+      <li><a class="reference" href="#getX11Window%2CGLFWWindow"
+    title="getX11Window(window: GLFWWindow): pointer">getX11Window,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getX11Adapter
+      <li><a class="reference" href="#getX11Adapter%2CGLFWMonitor"
+    title="getX11Adapter(monitor: GLFWMonitor): pointer">getX11Adapter,<wbr>GLFWMonitor</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getGLXWindow
+      <li><a class="reference" href="#getGLXWindow%2CGLFWWindow"
+    title="getGLXWindow(window: GLFWWindow): pointer">getGLXWindow,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getEGLContext
+      <li><a class="reference" href="#getEGLContext%2CGLFWWindow"
+    title="getEGLContext(window: GLFWWindow): pointer">getEGLContext,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getWin32Window
+      <li><a class="reference" href="#getWin32Window%2CGLFWWindow"
+    title="getWin32Window(window: GLFWWindow): pointer">getWin32Window,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getGLXContext
+      <li><a class="reference" href="#getGLXContext%2CGLFWWindow"
+    title="getGLXContext(window: GLFWWindow): pointer">getGLXContext,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getWaylandDisplay
+      <li><a class="reference" href="#getWaylandDisplay"
+    title="getWaylandDisplay(): pointer">getWaylandDisplay</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getWGLContext
+      <li><a class="reference" href="#getWGLContext%2CGLFWWindow"
+    title="getWGLContext(window: GLFWWindow): pointer">getWGLContext,<wbr>GLFWWindow</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getWin32Adapter
+      <li><a class="reference" href="#getWin32Adapter%2CGLFWMonitor"
+    title="getWin32Adapter(monitor: GLFWMonitor): cstring">getWin32Adapter,<wbr>GLFWMonitor</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getCocoaMonitor
+      <li><a class="reference" href="#getCocoaMonitor%2CGLFWMonitor"
+    title="getCocoaMonitor(monitor: GLFWMonitor): pointer">getCocoaMonitor,<wbr>GLFWMonitor</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -210,8 +276,8 @@ function main() {
 
 </dd>
 <a id="getWin32Window,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getWin32Window%2CGLFWWindow"><span class="Identifier">getWin32Window</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetWin32Window&quot;</span><span class="Other">,</span>
-    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getWin32Window%2CGLFWWindow"><span class="Identifier">getWin32Window</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetWin32Window&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">HWND</span></tt> of the specified window.</p>
@@ -223,7 +289,8 @@ function main() {
 
 </dd>
 <a id="getWGLContext,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getWGLContext%2CGLFWWindow"><span class="Identifier">getWGLContext</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetWGLContext&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getWGLContext%2CGLFWWindow"><span class="Identifier">getWGLContext</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetWGLContext&quot;</span><span class="Other">,</span>
+    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">HGLRC</span></tt> of the specified window.</p>
@@ -248,8 +315,8 @@ function main() {
 
 </dd>
 <a id="getCocoaWindow,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getCocoaWindow%2CGLFWWindow"><span class="Identifier">getCocoaWindow</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetCocoaWindow&quot;</span><span class="Other">,</span>
-    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getCocoaWindow%2CGLFWWindow"><span class="Identifier">getCocoaWindow</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetCocoaWindow&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">NSWindow</span></tt> of the specified window.</p>
@@ -261,8 +328,8 @@ function main() {
 
 </dd>
 <a id="getNSGLContext,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getNSGLContext%2CGLFWWindow"><span class="Identifier">getNSGLContext</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetNSGLContext&quot;</span><span class="Other">,</span>
-    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getNSGLContext%2CGLFWWindow"><span class="Identifier">getNSGLContext</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetNSGLContext&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">NSOpenGLContext</span></tt> of the specified window.</p>
@@ -286,8 +353,8 @@ function main() {
 
 </dd>
 <a id="getX11Adapter,GLFWMonitor"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getX11Adapter%2CGLFWMonitor"><span class="Identifier">getX11Adapter</span></a><span class="Other">(</span><span class="Identifier">monitor</span><span class="Other">:</span> <a href="glfw.html#GLFWMonitor"><span class="Identifier">GLFWMonitor</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetX11Adapter&quot;</span><span class="Other">,</span>
-    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getX11Adapter%2CGLFWMonitor"><span class="Identifier">getX11Adapter</span></a><span class="Other">(</span><span class="Identifier">monitor</span><span class="Other">:</span> <a href="glfw.html#GLFWMonitor"><span class="Identifier">GLFWMonitor</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetX11Adapter&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">RRCrtc</span></tt> of the specified monitor.</p>
@@ -299,8 +366,8 @@ function main() {
 
 </dd>
 <a id="getX11Monitor,GLFWMonitor"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getX11Monitor%2CGLFWMonitor"><span class="Identifier">getX11Monitor</span></a><span class="Other">(</span><span class="Identifier">monitor</span><span class="Other">:</span> <a href="glfw.html#GLFWMonitor"><span class="Identifier">GLFWMonitor</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetX11Monitor&quot;</span><span class="Other">,</span>
-    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getX11Monitor%2CGLFWMonitor"><span class="Identifier">getX11Monitor</span></a><span class="Other">(</span><span class="Identifier">monitor</span><span class="Other">:</span> <a href="glfw.html#GLFWMonitor"><span class="Identifier">GLFWMonitor</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetX11Monitor&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">RROutput</span></tt> of the specified monitor.</p>
@@ -312,7 +379,8 @@ function main() {
 
 </dd>
 <a id="getX11Window,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getX11Window%2CGLFWWindow"><span class="Identifier">getX11Window</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetX11Window&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getX11Window%2CGLFWWindow"><span class="Identifier">getX11Window</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetX11Window&quot;</span><span class="Other">,</span>
+    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">Window</span></tt> of the specified window.</p>
@@ -340,8 +408,8 @@ function main() {
 
 </dd>
 <a id="glfwGetX11SelectionString"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetX11SelectionString"><span class="Identifier">glfwGetX11SelectionString</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetX11SelectionString&quot;</span><span class="Other">,</span>
-    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#glfwGetX11SelectionString"><span class="Identifier">glfwGetX11SelectionString</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetX11SelectionString&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the contents of the current primary selection as a string.</p>
@@ -357,7 +425,8 @@ function main() {
 
 </dd>
 <a id="getGLXContext,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getGLXContext%2CGLFWWindow"><span class="Identifier">getGLXContext</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetGLXContext&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getGLXContext%2CGLFWWindow"><span class="Identifier">getGLXContext</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetGLXContext&quot;</span><span class="Other">,</span>
+    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">GLXContext</span></tt> of the specified window.</p>
@@ -369,7 +438,8 @@ function main() {
 
 </dd>
 <a id="getGLXWindow,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getGLXWindow%2CGLFWWindow"><span class="Identifier">getGLXWindow</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetGLXWindow&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getGLXWindow%2CGLFWWindow"><span class="Identifier">getGLXWindow</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetGLXWindow&quot;</span><span class="Other">,</span>
+    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">GLXWindow</span></tt> of the specified window.</p>
@@ -431,7 +501,8 @@ function main() {
 
 </dd>
 <a id="getEGLContext,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getEGLContext%2CGLFWWindow"><span class="Identifier">getEGLContext</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetEGLContext&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getEGLContext%2CGLFWWindow"><span class="Identifier">getEGLContext</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetEGLContext&quot;</span><span class="Other">,</span>
+    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">EGLContext</span></tt> of the specified window.</p>
@@ -443,7 +514,8 @@ function main() {
 
 </dd>
 <a id="getEGLSurface,GLFWWindow"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getEGLSurface%2CGLFWWindow"><span class="Identifier">getEGLSurface</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetEGLSurface&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getEGLSurface%2CGLFWWindow"><span class="Identifier">getEGLSurface</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetEGLSurface&quot;</span><span class="Other">,</span>
+    <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>@brief Returns the <tt class="docutils literal"><span class="pre">EGLSurface</span></tt> of the specified window.</p>
@@ -455,8 +527,9 @@ function main() {
 
 </dd>
 <a id="getOSMesaColorBuffer,GLFWWindow,ptr.int32,ptr.int32,ptr.int32,ptr.pointer"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getOSMesaColorBuffer%2CGLFWWindow%2Cptr.int32%2Cptr.int32%2Cptr.int32%2Cptr.pointer"><span class="Identifier">getOSMesaColorBuffer</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">;</span> <span class="Identifier">width</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span>
-                         <span class="Identifier">format</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">buffer</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int32</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><span class="Keyword">proc</span> <a href="#getOSMesaColorBuffer%2CGLFWWindow%2Cptr.int32%2Cptr.int32%2Cptr.int32%2Cptr.pointer"><span class="Identifier">getOSMesaColorBuffer</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">;</span> <span class="Identifier">width</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span>
+                          <span class="Identifier">height</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">format</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span>
+                          <span class="Identifier">buffer</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int32</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetOSMesaColorBuffer&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -469,8 +542,9 @@ function main() {
 
 </dd>
 <a id="getOSMesaDepthBuffer,GLFWWindow,ptr.int32,ptr.int32,ptr.int32,ptr.pointer"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getOSMesaDepthBuffer%2CGLFWWindow%2Cptr.int32%2Cptr.int32%2Cptr.int32%2Cptr.pointer"><span class="Identifier">getOSMesaDepthBuffer</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">;</span> <span class="Identifier">width</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span>
-                         <span class="Identifier">bytesPerValue</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">buffer</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int32</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><span class="Keyword">proc</span> <a href="#getOSMesaDepthBuffer%2CGLFWWindow%2Cptr.int32%2Cptr.int32%2Cptr.int32%2Cptr.pointer"><span class="Identifier">getOSMesaDepthBuffer</span></a><span class="Other">(</span><span class="Identifier">window</span><span class="Other">:</span> <a href="glfw.html#GLFWWindow"><span class="Identifier">GLFWWindow</span></a><span class="Other">;</span> <span class="Identifier">width</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span>
+                          <span class="Identifier">height</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">bytesPerValue</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">int32</span><span class="Other">;</span>
+                          <span class="Identifier">buffer</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int32</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;glfwGetOSMesaDepthBuffer&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -505,7 +579,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-04-17 21:06:55 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-02-18 06:41:09 UTC</small>
       </div>
     </div>
   </div>
